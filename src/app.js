@@ -25,6 +25,12 @@ app.use("/api/libros", autenticacion,  librosRouter);
 
 app.use(errorHandler);
 
+// Importamos el Router de Usuarios
+const usuariosRouter = require("./routes/usuarios");
+
+//Configuramos el middleware de autenticacion para usuarios
+app.use("/api/usuarios", autenticacion,  usuariosRouter);
+
 app.listen(3000, () => {
   console.log("Servidor iniciado en el puerto 3000");
 });
